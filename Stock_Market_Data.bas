@@ -7,8 +7,8 @@ Sub Stock_Mark_Data()
     Dim Yearly_Change As Double
     Dim Percent_Change As String
     Dim Total_Stock_Volume As Double
-    Dim Close_Y As Double
-    Dim Open_Y As Double
+    Dim Closing_year As Double
+    Dim Opening_Year As Double
     Dim Summary_Table_Row As Long
 
  
@@ -31,10 +31,10 @@ For i = 2 To LastRow
     If Cells(i + 1, 1).Value <> Cells(i, 1).Value Then
                 
     Ticker = Cells(i, 1).Value
-    Open_Y = ws.Cells(i, 3).Value
-    Close_Y = ws.Cells(i, 6).Value
-    Yearly_Change = Close_Y - Open_Y
-    Percent_Change = Close_Y - Open_Y
+    Opening_Year = ws.Cells(i, 3).Value
+    Closing_Year = ws.Cells(i, 6).Value
+    Yearly_Change = Closing_Year - Opening_Year
+    Percent_Change = (Closing_Year - Opening_Year)/Closing_Year
     Total_Stock_Volume = Total_Stock_Volume + Cells(i, 7).Value
                 
 
